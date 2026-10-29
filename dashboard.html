@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robot Study Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <main class="dashboard-shell">
+    <header class="dashboard-topbar"><div class="brand"><span class="brand-mark">R</span><span>Robot Study Dashboard</span></div><a href="index.html">← Back to survey</a></header>
+    <section class="dashboard-heading"><div><p class="eyebrow">Research workspace</p><h1>Responses overview</h1><p>Review locally saved participants and inspect each response.</p></div><div class="dashboard-actions"><label class="import-button">Import JSON<input id="import-files" type="file" accept="application/json,.json" multiple></label><button id="export-all" class="button secondary">Export all</button></div></section>
+    <section class="stats-grid"><article class="stat-card"><span>Participants</span><strong id="stat-participants">0</strong></article><article class="stat-card"><span>Average age</span><strong id="stat-age">—</strong></article><article class="stat-card"><span>Most used language</span><strong id="stat-language">—</strong></article><article class="stat-card"><span>University participants</span><strong id="stat-university">0</strong></article></section>
+    <section class="stage-overview"><article class="stage-summary baseline-summary"><p class="eyebrow">Stage 1</p><h2>Baseline</h2><span>No explanation shown</span><strong id="stage-baseline-count">0 participants</strong></article><article class="stage-summary contrastive-summary"><p class="eyebrow">Stage 2</p><h2>Contrastive</h2><span>Why A instead of B?</span><strong id="stage-contrastive-count">0 participants</strong></article><article class="stage-summary counterfactual-summary"><p class="eyebrow">Stage 3</p><h2>Counterfactual</h2><span>What if A instead of B?</span><strong id="stage-counterfactual-count">0 participants</strong></article><article class="stage-summary mixed-summary"><p class="eyebrow">Stage 4</p><h2>Mixed</h2><span>Why + what if</span><strong id="stage-mixed-count">0 participants</strong></article><article class="stage-summary discovery-summary"><p class="eyebrow">Stage 5</p><h2>Discovery 🔍</h2><span>Arrange the cube order</span><strong id="stage-discovery-count">0 participants</strong></article><article class="stage-summary validation-summary"><p class="eyebrow">Stage 6</p><h2>Validation ❓</h2><span>Observe robot behavior</span><strong id="stage-validation-count">0 participants</strong></article></section>
+    <section class="dashboard-grid">
+      <article class="data-card participant-card"><div class="card-heading"><div><p class="eyebrow">Saved records</p><h2>Participants</h2></div><span id="record-count" class="record-count">0 records</span></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Language</th><th>Age</th><th>Education</th><th>Last saved</th></tr></thead><tbody id="participant-table"></tbody></table></div><div id="empty-state" class="empty-state">No records yet. Complete the survey or import a JSON response.</div></article>
+      <article class="data-card detail-card"><div class="card-heading"><div><p class="eyebrow">Selected record</p><h2 id="detail-title">Choose a participant</h2></div><button id="delete-record" class="button danger" type="button" hidden>Delete response</button></div><div id="participant-detail" class="detail-content"><div class="empty-state">Select a participant from the table to view their answers.</div></div></article>
+    </section>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Robot behavior and explanation survey" />
+  <title>Robot Explanation Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">R</span><span id="brand-name">Robot Explanation Study</span></div>
+      <div class="topbar-tools"><label class="language-picker" for="language-select"><span aria-hidden="true">◎</span><select id="language-select" aria-label="Select language"><option value="en">English</option><option value="fr">Français</option><option value="es">Español</option><option value="ar">العربية</option></select></label><div class="study-code" id="study-code">LOCAL PILOT <span id="connection-dot" class="connection-dot"></span></div></div>
+    </header>
+
+    <section class="progress-wrap" aria-label="Study progress">
+      <div id="stage-progress" class="stage-progress" aria-label="Study stages"></div>
+      <div class="progress-meta"><span id="stage-label">Study setup</span><span id="progress-label">Welcome</span><span id="progress-count">1 / 17</span></div>
+      <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+    </section>
+
+    <section id="app" class="stage" aria-live="polite"></section>
+
+    <footer class="footer"><span id="footer-note">Research prototype · Your responses stay in this browser.</span><span class="footer-tools"><span id="save-status">Autosaved locally</span><a class="dashboard-link" href="dashboard.html">Researcher dashboard</a></span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
