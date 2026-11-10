@@ -39,7 +39,8 @@ def answer_question(question_text):
     terms = find_technical_terms(answer)
     if terms:
         answer = llm.chat(*rewrite_prompt(answer, terms))
-    return answer
+    alternative_run = evidence.alternative.to_dict() if evidence.alternative is not None else None
+    return answer, alternative_run
 
 
 class handler(BaseHTTPRequestHandler):
@@ -78,7 +79,7 @@ class handler(BaseHTTPRequestHandler):
             return
 
         try:
-            answer = answer_question(question)
+            answer, alternative_run = answer_question(question)
         except Exception as error:
             print(f'Explanation API error: {type(error).__name__}: {error}')
             traceback.print_exc()
@@ -86,4 +87,8 @@ class handler(BaseHTTPRequestHandler):
             return
 
         question_counts[counter_key] = question_counts.get(counter_key, 0) + 1
-        self._send(200, {'answer': answer, 'question': question})
+        self._send(200, {
+            'answer': answer,
+            'question': question,
+            'alternativeRun': alternative_run,
+        })

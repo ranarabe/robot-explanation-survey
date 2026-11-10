@@ -246,6 +246,14 @@ async function sendExplanation(question) {
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'The explanation service returned an error.');
       explanationResponse = payload.answer || '';
+      if (payload.alternativeRun) {
+        const branchResponse = await fetch('/api/save-alternative', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ participantId: participant.id, branch: payload.alternativeRun })
+        });
+        if (!branchResponse.ok) console.error('Could not save alternative branch.', await branchResponse.text());
+      }
     } else {
       await new Promise(resolve => setTimeout(resolve, 350));
       explanationResponse = staticExplanation(step);
