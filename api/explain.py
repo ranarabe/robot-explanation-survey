@@ -23,6 +23,9 @@ def get_knowledge_base():
     global knowledge_base
     if knowledge_base is None:
         knowledge_base = KnowledgeBase.load(RUN_FILE, static_dir=PACKAGE_DIR)
+        # Vercel Function filesystems are read-only. Counterfactual questions
+        # may otherwise try to save an alternative-run JSON beside the source run.
+        knowledge_base.path = None
     return knowledge_base
 
 
