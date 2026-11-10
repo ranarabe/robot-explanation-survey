@@ -56,7 +56,7 @@ button { cursor: pointer; }
 .stage-video .video-frame { margin-top: 14px; max-width: none; }
 .stage-video .video-caption { margin-bottom: 2px; }
 .video-intro-panel { padding-top: 30px; }
-.panel { width: min(800px, 100%); background: var(--card); border: 1px solid #e4e9e8; border-radius: 24px; box-shadow: var(--shadow); padding: clamp(28px, 6vw, 66px); }
+.panel { width: min(800px, 100%); background: var(--card); border: 1px solid #e4e9e8; border-radius: 24px; box-shadow: var(--shadow); padding: clamp(28px, 6vw, 66px); scroll-margin-top: 18px; }
 .eyebrow { color: var(--stage-accent); text-transform: uppercase; letter-spacing: .16em; font: 11px 'DM Mono', monospace; margin: 0 0 18px; }
 h1, h2 { margin: 0; letter-spacing: -.04em; line-height: 1.08; }
 h1 { font-size: clamp(36px, 6vw, 68px); max-width: 700px; }

@@ -1,0 +1,726 @@
+{
+  "meta": {
+    "created_at": "2026-11-06T21:06:13",
+    "algorithm": {
+      "name": "greedy_stability",
+      "version": 3,
+      "description": "Greedy stacking: the tower is built from the bottom up. At each layer the algorithm gives every object that is not placed yet a score, its global stability, and places the one with the highest score. A decision is never revisited."
+    },
+    "score_function": "stability_score",
+    "score_weights": {}
+  },
+  "objects": {
+    "cube_green_2": {
+      "element_id": "cube_green_2",
+      "shape": "cube",
+      "color": "green",
+      "width": 0.09145028900177293,
+      "depth": 0.11005034778179454,
+      "height": 0.07499651908874516,
+      "mass": null,
+      "detection_id": 2,
+      "volume": 0.000754775
+    },
+    "cube_blue_1": {
+      "element_id": "cube_blue_1",
+      "shape": "cube",
+      "color": "blue",
+      "width": 0.07435747966867268,
+      "depth": 0.07910370177518371,
+      "height": 0.05999641418457036,
+      "mass": null,
+      "detection_id": 1,
+      "volume": 0.000352896
+    },
+    "cube_red_3": {
+      "element_id": "cube_red_3",
+      "shape": "cube",
+      "color": "red",
+      "width": 0.07215540380126537,
+      "depth": 0.07215540380126537,
+      "height": 0.049996364116668746,
+      "mass": null,
+      "detection_id": 3,
+      "volume": 0.000260301
+    }
+  },
+  "given": [
+    {
+      "id": "L1: cube_green_2 has_local_stability",
+      "subject": "cube_green_2",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_green_2 has_global_stability",
+      "subject": "cube_green_2",
+      "predicate": "has_global_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_green_2 has_score",
+      "subject": "cube_green_2",
+      "predicate": "has_score",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_blue_1 has_local_stability",
+      "subject": "cube_blue_1",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_blue_1 has_global_stability",
+      "subject": "cube_blue_1",
+      "predicate": "has_global_stability",
+      "object": 0.875595,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_blue_1 has_score",
+      "subject": "cube_blue_1",
+      "predicate": "has_score",
+      "object": 0.875595,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_red_3 has_local_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_red_3 has_global_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_global_stability",
+      "object": 0.818269,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_red_3 has_score",
+      "subject": "cube_red_3",
+      "predicate": "has_score",
+      "object": 0.818269,
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L1: cube_green_2 selected_in layer_1",
+      "subject": "cube_green_2",
+      "predicate": "selected_in",
+      "object": "layer_1",
+      "source": "execution",
+      "layer": 1
+    },
+    {
+      "id": "L2: cube_blue_1 has_local_stability",
+      "subject": "cube_blue_1",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_blue_1 has_global_stability",
+      "subject": "cube_blue_1",
+      "predicate": "has_global_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_blue_1 has_score",
+      "subject": "cube_blue_1",
+      "predicate": "has_score",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_red_3 has_local_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_red_3 has_global_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_global_stability",
+      "object": 0.971337,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_red_3 has_score",
+      "subject": "cube_red_3",
+      "predicate": "has_score",
+      "object": 0.971337,
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L2: cube_blue_1 selected_in layer_2",
+      "subject": "cube_blue_1",
+      "predicate": "selected_in",
+      "object": "layer_2",
+      "source": "execution",
+      "layer": 2
+    },
+    {
+      "id": "L3: cube_red_3 has_local_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_local_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 3
+    },
+    {
+      "id": "L3: cube_red_3 has_global_stability",
+      "subject": "cube_red_3",
+      "predicate": "has_global_stability",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 3
+    },
+    {
+      "id": "L3: cube_red_3 has_score",
+      "subject": "cube_red_3",
+      "predicate": "has_score",
+      "object": 1.0,
+      "source": "execution",
+      "layer": 3
+    },
+    {
+      "id": "L3: cube_red_3 selected_in layer_3",
+      "subject": "cube_red_3",
+      "predicate": "selected_in",
+      "object": "layer_3",
+      "source": "execution",
+      "layer": 3
+    },
+    {
+      "id": "tower has_tower_stability",
+      "subject": "tower",
+      "predicate": "has_tower_stability",
+      "object": 1.0,
+      "source": "execution"
+    }
+  ],
+  "inferred": {
+    "environment": [
+      {
+        "id": "cube_blue_1 on_top_of cube_green_2",
+        "subject": "cube_blue_1",
+        "predicate": "on_top_of",
+        "object": "cube_green_2",
+        "source": "environment",
+        "rule": "on_top_of",
+        "premises": [
+          "L2: cube_blue_1 selected_in layer_2",
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "cube_red_3 on_top_of cube_blue_1",
+        "subject": "cube_red_3",
+        "predicate": "on_top_of",
+        "object": "cube_blue_1",
+        "source": "environment",
+        "rule": "on_top_of",
+        "premises": [
+          "L3: cube_red_3 selected_in layer_3",
+          "L2: cube_blue_1 selected_in layer_2"
+        ]
+      },
+      {
+        "id": "cube_green_2 on_top_of table",
+        "subject": "cube_green_2",
+        "predicate": "on_top_of",
+        "object": "table",
+        "source": "environment",
+        "rule": "on_table",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1",
+          "layer_1 rests_on table"
+        ]
+      },
+      {
+        "id": "cube_green_2 is base",
+        "subject": "cube_green_2",
+        "predicate": "is",
+        "object": "base",
+        "source": "environment",
+        "rule": "is_base",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "cube_red_3 is top",
+        "subject": "cube_red_3",
+        "predicate": "is",
+        "object": "top",
+        "source": "environment",
+        "rule": "is_top",
+        "premises": [
+          "L3: cube_red_3 selected_in layer_3"
+        ]
+      }
+    ],
+    "physics": [
+      {
+        "id": "cube_green_2 under cube_blue_1",
+        "subject": "cube_green_2",
+        "predicate": "under",
+        "object": "cube_blue_1",
+        "source": "physics",
+        "rule": "under",
+        "premises": [
+          "cube_blue_1 on_top_of cube_green_2"
+        ]
+      },
+      {
+        "id": "cube_blue_1 under cube_red_3",
+        "subject": "cube_blue_1",
+        "predicate": "under",
+        "object": "cube_red_3",
+        "source": "physics",
+        "rule": "under",
+        "premises": [
+          "cube_red_3 on_top_of cube_blue_1"
+        ]
+      },
+      {
+        "id": "table under cube_green_2",
+        "subject": "table",
+        "predicate": "under",
+        "object": "cube_green_2",
+        "source": "physics",
+        "rule": "under",
+        "premises": [
+          "cube_green_2 on_top_of table"
+        ]
+      },
+      {
+        "id": "cube_green_2 bigger_than cube_blue_1",
+        "subject": "cube_green_2",
+        "predicate": "bigger_than",
+        "object": "cube_blue_1",
+        "source": "physics",
+        "rule": "bigger_than",
+        "evidence": {
+          "cube_green_2.volume": 0.000754775,
+          "cube_blue_1.volume": 0.000352896
+        }
+      },
+      {
+        "id": "cube_green_2 bigger_than cube_red_3",
+        "subject": "cube_green_2",
+        "predicate": "bigger_than",
+        "object": "cube_red_3",
+        "source": "physics",
+        "rule": "bigger_than",
+        "evidence": {
+          "cube_green_2.volume": 0.000754775,
+          "cube_red_3.volume": 0.000260301
+        }
+      },
+      {
+        "id": "cube_blue_1 bigger_than cube_red_3",
+        "subject": "cube_blue_1",
+        "predicate": "bigger_than",
+        "object": "cube_red_3",
+        "source": "physics",
+        "rule": "bigger_than",
+        "evidence": {
+          "cube_blue_1.volume": 0.000352896,
+          "cube_red_3.volume": 0.000260301
+        }
+      },
+      {
+        "id": "cube_blue_1 smaller_than cube_green_2",
+        "subject": "cube_blue_1",
+        "predicate": "smaller_than",
+        "object": "cube_green_2",
+        "source": "physics",
+        "rule": "smaller_than",
+        "premises": [
+          "cube_green_2 bigger_than cube_blue_1"
+        ]
+      },
+      {
+        "id": "cube_red_3 smaller_than cube_green_2",
+        "subject": "cube_red_3",
+        "predicate": "smaller_than",
+        "object": "cube_green_2",
+        "source": "physics",
+        "rule": "smaller_than",
+        "premises": [
+          "cube_green_2 bigger_than cube_red_3"
+        ]
+      },
+      {
+        "id": "cube_red_3 smaller_than cube_blue_1",
+        "subject": "cube_red_3",
+        "predicate": "smaller_than",
+        "object": "cube_blue_1",
+        "source": "physics",
+        "rule": "smaller_than",
+        "premises": [
+          "cube_blue_1 bigger_than cube_red_3"
+        ]
+      }
+    ],
+    "algorithm": [
+      {
+        "id": "cube_green_2 is placed",
+        "subject": "cube_green_2",
+        "predicate": "is",
+        "object": "placed",
+        "source": "algorithm",
+        "rule": "placed",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "cube_blue_1 is placed",
+        "subject": "cube_blue_1",
+        "predicate": "is",
+        "object": "placed",
+        "source": "algorithm",
+        "rule": "placed",
+        "premises": [
+          "L2: cube_blue_1 selected_in layer_2"
+        ]
+      },
+      {
+        "id": "cube_red_3 is placed",
+        "subject": "cube_red_3",
+        "predicate": "is",
+        "object": "placed",
+        "source": "algorithm",
+        "rule": "placed",
+        "premises": [
+          "L3: cube_red_3 selected_in layer_3"
+        ]
+      },
+      {
+        "id": "L1: cube_green_2 candidate_in layer_1",
+        "subject": "cube_green_2",
+        "predicate": "candidate_in",
+        "object": "layer_1",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "candidate_in",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "L1: cube_blue_1 candidate_in layer_1",
+        "subject": "cube_blue_1",
+        "predicate": "candidate_in",
+        "object": "layer_1",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "candidate_in",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "L1: cube_red_3 candidate_in layer_1",
+        "subject": "cube_red_3",
+        "predicate": "candidate_in",
+        "object": "layer_1",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "candidate_in",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "L2: cube_blue_1 candidate_in layer_2",
+        "subject": "cube_blue_1",
+        "predicate": "candidate_in",
+        "object": "layer_2",
+        "source": "algorithm",
+        "layer": 2,
+        "rule": "candidate_in",
+        "premises": [
+          "L2: cube_blue_1 selected_in layer_2"
+        ]
+      },
+      {
+        "id": "L2: cube_red_3 candidate_in layer_2",
+        "subject": "cube_red_3",
+        "predicate": "candidate_in",
+        "object": "layer_2",
+        "source": "algorithm",
+        "layer": 2,
+        "rule": "candidate_in",
+        "premises": [
+          "L2: cube_blue_1 selected_in layer_2"
+        ]
+      },
+      {
+        "id": "L3: cube_red_3 candidate_in layer_3",
+        "subject": "cube_red_3",
+        "predicate": "candidate_in",
+        "object": "layer_3",
+        "source": "algorithm",
+        "layer": 3,
+        "rule": "candidate_in",
+        "premises": [
+          "L3: cube_red_3 selected_in layer_3"
+        ]
+      },
+      {
+        "id": "L1: cube_green_2 best_candidate_in layer_1",
+        "subject": "cube_green_2",
+        "predicate": "best_candidate_in",
+        "object": "layer_1",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "best_candidate",
+        "premises": [
+          "L1: cube_green_2 selected_in layer_1"
+        ]
+      },
+      {
+        "id": "L2: cube_blue_1 best_candidate_in layer_2",
+        "subject": "cube_blue_1",
+        "predicate": "best_candidate_in",
+        "object": "layer_2",
+        "source": "algorithm",
+        "layer": 2,
+        "rule": "best_candidate",
+        "premises": [
+          "L2: cube_blue_1 selected_in layer_2"
+        ]
+      },
+      {
+        "id": "L3: cube_red_3 best_candidate_in layer_3",
+        "subject": "cube_red_3",
+        "predicate": "best_candidate_in",
+        "object": "layer_3",
+        "source": "algorithm",
+        "layer": 3,
+        "rule": "best_candidate",
+        "premises": [
+          "L3: cube_red_3 selected_in layer_3"
+        ]
+      },
+      {
+        "id": "L1: cube_green_2 preferred_over cube_blue_1",
+        "subject": "cube_green_2",
+        "predicate": "preferred_over",
+        "object": "cube_blue_1",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "preferred_over",
+        "premises": [
+          "L1: cube_green_2 best_candidate_in layer_1",
+          "L1: cube_blue_1 candidate_in layer_1"
+        ],
+        "evidence": {
+          "cube_green_2.local_stability": 1.0,
+          "cube_green_2.global_stability": 1.0,
+          "cube_green_2.score": 1.0,
+          "cube_blue_1.local_stability": 1.0,
+          "cube_blue_1.global_stability": 0.875595,
+          "cube_blue_1.score": 0.875595
+        }
+      },
+      {
+        "id": "L1: cube_green_2 preferred_over cube_red_3",
+        "subject": "cube_green_2",
+        "predicate": "preferred_over",
+        "object": "cube_red_3",
+        "source": "algorithm",
+        "layer": 1,
+        "rule": "preferred_over",
+        "premises": [
+          "L1: cube_green_2 best_candidate_in layer_1",
+          "L1: cube_red_3 candidate_in layer_1"
+        ],
+        "evidence": {
+          "cube_green_2.local_stability": 1.0,
+          "cube_green_2.global_stability": 1.0,
+          "cube_green_2.score": 1.0,
+          "cube_red_3.local_stability": 1.0,
+          "cube_red_3.global_stability": 0.818269,
+          "cube_red_3.score": 0.818269
+        }
+      },
+      {
+        "id": "L2: cube_blue_1 preferred_over cube_red_3",
+        "subject": "cube_blue_1",
+        "predicate": "preferred_over",
+        "object": "cube_red_3",
+        "source": "algorithm",
+        "layer": 2,
+        "rule": "preferred_over",
+        "premises": [
+          "L2: cube_blue_1 best_candidate_in layer_2",
+          "L2: cube_red_3 candidate_in layer_2"
+        ],
+        "evidence": {
+          "cube_blue_1.local_stability": 1.0,
+          "cube_blue_1.global_stability": 1.0,
+          "cube_blue_1.score": 1.0,
+          "cube_red_3.local_stability": 1.0,
+          "cube_red_3.global_stability": 0.971337,
+          "cube_red_3.score": 0.971337
+        }
+      }
+    ],
+    "execution": []
+  },
+  "index": {
+    "by_layer": {
+      "layer_1": [
+        "L1: cube_green_2 has_local_stability = 1.0",
+        "L1: cube_green_2 has_global_stability = 1.0",
+        "L1: cube_green_2 has_score = 1.0",
+        "L1: cube_blue_1 has_local_stability = 1.0",
+        "L1: cube_blue_1 has_global_stability = 0.875595",
+        "L1: cube_blue_1 has_score = 0.875595",
+        "L1: cube_red_3 has_local_stability = 1.0",
+        "L1: cube_red_3 has_global_stability = 0.818269",
+        "L1: cube_red_3 has_score = 0.818269",
+        "L1: cube_green_2 selected_in layer_1",
+        "L1: cube_green_2 candidate_in layer_1",
+        "L1: cube_blue_1 candidate_in layer_1",
+        "L1: cube_red_3 candidate_in layer_1",
+        "L1: cube_green_2 best_candidate_in layer_1",
+        "L1: cube_green_2 preferred_over cube_blue_1",
+        "L1: cube_green_2 preferred_over cube_red_3"
+      ],
+      "layer_2": [
+        "L2: cube_blue_1 has_local_stability = 1.0",
+        "L2: cube_blue_1 has_global_stability = 1.0",
+        "L2: cube_blue_1 has_score = 1.0",
+        "L2: cube_red_3 has_local_stability = 1.0",
+        "L2: cube_red_3 has_global_stability = 0.971337",
+        "L2: cube_red_3 has_score = 0.971337",
+        "L2: cube_blue_1 selected_in layer_2",
+        "L2: cube_blue_1 candidate_in layer_2",
+        "L2: cube_red_3 candidate_in layer_2",
+        "L2: cube_blue_1 best_candidate_in layer_2",
+        "L2: cube_blue_1 preferred_over cube_red_3"
+      ],
+      "layer_3": [
+        "L3: cube_red_3 has_local_stability = 1.0",
+        "L3: cube_red_3 has_global_stability = 1.0",
+        "L3: cube_red_3 has_score = 1.0",
+        "L3: cube_red_3 selected_in layer_3",
+        "L3: cube_red_3 candidate_in layer_3",
+        "L3: cube_red_3 best_candidate_in layer_3"
+      ]
+    },
+    "by_object": {
+      "cube_green_2": [
+        "L1: cube_green_2 has_local_stability = 1.0",
+        "L1: cube_green_2 has_global_stability = 1.0",
+        "L1: cube_green_2 has_score = 1.0",
+        "L1: cube_green_2 selected_in layer_1",
+        "cube_blue_1 on_top_of cube_green_2",
+        "cube_green_2 on_top_of table",
+        "cube_green_2 is base",
+        "cube_green_2 under cube_blue_1",
+        "table under cube_green_2",
+        "cube_green_2 bigger_than cube_blue_1",
+        "cube_green_2 bigger_than cube_red_3",
+        "cube_blue_1 smaller_than cube_green_2",
+        "cube_red_3 smaller_than cube_green_2",
+        "cube_green_2 is placed",
+        "L1: cube_green_2 candidate_in layer_1",
+        "L1: cube_green_2 best_candidate_in layer_1",
+        "L1: cube_green_2 preferred_over cube_blue_1",
+        "L1: cube_green_2 preferred_over cube_red_3"
+      ],
+      "cube_blue_1": [
+        "L1: cube_blue_1 has_local_stability = 1.0",
+        "L1: cube_blue_1 has_global_stability = 0.875595",
+        "L1: cube_blue_1 has_score = 0.875595",
+        "L2: cube_blue_1 has_local_stability = 1.0",
+        "L2: cube_blue_1 has_global_stability = 1.0",
+        "L2: cube_blue_1 has_score = 1.0",
+        "L2: cube_blue_1 selected_in layer_2",
+        "cube_blue_1 on_top_of cube_green_2",
+        "cube_red_3 on_top_of cube_blue_1",
+        "cube_green_2 under cube_blue_1",
+        "cube_blue_1 under cube_red_3",
+        "cube_green_2 bigger_than cube_blue_1",
+        "cube_blue_1 bigger_than cube_red_3",
+        "cube_blue_1 smaller_than cube_green_2",
+        "cube_red_3 smaller_than cube_blue_1",
+        "cube_blue_1 is placed",
+        "L1: cube_blue_1 candidate_in layer_1",
+        "L2: cube_blue_1 candidate_in layer_2",
+        "L2: cube_blue_1 best_candidate_in layer_2",
+        "L1: cube_green_2 preferred_over cube_blue_1",
+        "L2: cube_blue_1 preferred_over cube_red_3"
+      ],
+      "cube_red_3": [
+        "L1: cube_red_3 has_local_stability = 1.0",
+        "L1: cube_red_3 has_global_stability = 0.818269",
+        "L1: cube_red_3 has_score = 0.818269",
+        "L2: cube_red_3 has_local_stability = 1.0",
+        "L2: cube_red_3 has_global_stability = 0.971337",
+        "L2: cube_red_3 has_score = 0.971337",
+        "L3: cube_red_3 has_local_stability = 1.0",
+        "L3: cube_red_3 has_global_stability = 1.0",
+        "L3: cube_red_3 has_score = 1.0",
+        "L3: cube_red_3 selected_in layer_3",
+        "cube_red_3 on_top_of cube_blue_1",
+        "cube_red_3 is top",
+        "cube_blue_1 under cube_red_3",
+        "cube_green_2 bigger_than cube_red_3",
+        "cube_blue_1 bigger_than cube_red_3",
+        "cube_red_3 smaller_than cube_green_2",
+        "cube_red_3 smaller_than cube_blue_1",
+        "cube_red_3 is placed",
+        "L1: cube_red_3 candidate_in layer_1",
+        "L2: cube_red_3 candidate_in layer_2",
+        "L3: cube_red_3 candidate_in layer_3",
+        "L3: cube_red_3 best_candidate_in layer_3",
+        "L1: cube_green_2 preferred_over cube_red_3",
+        "L2: cube_blue_1 preferred_over cube_red_3"
+      ]
+    }
+  },
+  "rules": [
+    "[environment] on_top_of: IF Y selected_in layer_n AND Z selected_in layer_(n-1) THEN Y on_top_of Z",
+    "[environment] on_table: IF Y selected_in layer_1 AND layer_1 rests_on S THEN Y on_top_of S",
+    "[environment] is_base: IF Y selected_in layer_1 THEN Y is base",
+    "[environment] is_top: IF all objects placed AND Y selected_in the last layer THEN Y is top",
+    "[physics] under: IF Y on_top_of Z THEN Z under Y",
+    "[physics] bigger_than: IF Y.volume > X.volume THEN Y bigger_than X",
+    "[physics] smaller_than: IF Y bigger_than X THEN X smaller_than Y",
+    "[physics] bigger_from_smaller: IF Y smaller_than X THEN X bigger_than Y",
+    "[physics] bigger_on_smaller: IF Y on_top_of Z AND Y bigger_than Z THEN Y bigger_on_smaller Z (Y is bigger than Z but placed on top of it: this breaks the order \"bigger objects go lower\")",
+    "[algorithm] placed: IF Y selected_in any layer THEN Y is placed",
+    "[algorithm] candidate_in: IF layer_n has a selection AND X not selected in any layer < n THEN X candidate_in layer_n",
+    "[algorithm] best_candidate: IF Y selected_in layer_n THEN Y best_candidate_in layer_n",
+    "[algorithm] preferred_over: IF Y best_candidate_in layer_n AND X candidate_in layer_n AND X != Y THEN Y preferred_over X (in layer_n)"
+  ]
+}
