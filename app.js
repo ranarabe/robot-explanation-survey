@@ -203,10 +203,11 @@ function upsertRecord() { const records = JSON.parse(localStorage.getItem('robot
 function save() { localStorage.setItem('robotStudyResponses', JSON.stringify(responses)); upsertRecord(); updateChrome(); }
 function saveParticipant() { participant.surveyLanguage = participant.surveyLanguage || language; localStorage.setItem('robotStudyParticipant', JSON.stringify(participant)); upsertRecord(); }
 function saveAll() { save(); saveParticipant(); }
+async function submitRecordToServer() { const host = window.location.hostname; if (host === 'localhost' || host === '127.0.0.1' || host.endsWith('github.io')) return; try { await fetch('/api/save-response', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(recordSnapshot()) }); } catch (error) { console.error('Participant response was not uploaded:', error); } }
 function createParticipant() { const rewardCharacter = Math.floor(Math.random() * 20); return { id: `P-${new Date().toISOString().slice(0, 10).replaceAll('-', '')}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`, surveyLanguage: language, demographics: {}, rewardCharacter, rewardMessage: rewardMessages[Math.floor(Math.random() * rewardMessages.length)], dinosaurFact: dinosaurFacts[rewardCharacter] }; }
 function beginSurvey() { responses = {}; localStorage.removeItem('robotStudyResponses'); localStorage.removeItem('robotStudyParticipant'); participant = createParticipant(); saveParticipant(); current = 1; answerVisible = false; explanationResponse = ''; explanationError = ''; render(); }
 function focusQuestion() { requestAnimationFrame(() => document.querySelector('#app .panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' })); }
-function next() { if (validate()) { answerVisible = false; explanationResponse = ''; explanationError = ''; current = Math.min(current + 1, steps.length - 1); render(); focusQuestion(); } }
+function next() { if (validate()) { answerVisible = false; explanationResponse = ''; explanationError = ''; current = Math.min(current + 1, steps.length - 1); render(); if (current === steps.length - 1) submitRecordToServer(); focusQuestion(); } }
 function back() { current = Math.max(0, current - 1); answerVisible = false; explanationResponse = ''; explanationError = ''; render(); focusQuestion(); }
 function validate() {
   const step = steps[current]; if (!step.key) return true;

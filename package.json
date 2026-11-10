@@ -1,0 +1,7 @@
+{
+  "name": "robot-explanation-survey",
+  "private": true,
+  "dependencies": {
+    "@vercel/blob": "latest"
+  }
+}
