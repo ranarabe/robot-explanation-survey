@@ -1,5 +1,6 @@
 import json
 import os
+import traceback
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler
 
@@ -75,7 +76,9 @@ class handler(BaseHTTPRequestHandler):
 
         try:
             answer = answer_question(question)
-        except Exception:
+        except Exception as error:
+            print(f'Explanation API error: {type(error).__name__}: {error}')
+            traceback.print_exc()
             self._send(500, {'error': 'The explanation service could not answer right now.'})
             return
 
