@@ -1,0 +1,9 @@
+{
+  "description": "Static facts about the work environment. Same for every run.",
+  "facts": [
+    {"subject": "table", "predicate": "is", "object": "support_surface"},
+    {"subject": "layer_1", "predicate": "rests_on", "object": "table"},
+    {"subject": "tower", "predicate": "grows_along", "object": "z_axis"},
+    {"subject": "placement", "predicate": "is", "object": "centered_on_base"}
+  ]
+}

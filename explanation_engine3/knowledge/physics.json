@@ -1,0 +1,7 @@
+{
+  "description": "Static physical knowledge. Same for every run.",
+  "facts": [
+    {"subject": "gravity", "predicate": "points", "object": "down"},
+    {"subject": "lower_object", "predicate": "carries_weight_of", "object": "upper_objects"}
+  ]
+}

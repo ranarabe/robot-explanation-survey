@@ -237,16 +237,30 @@ async function sendExplanation(question) {
   explanationError = '';
   answerVisible = false;
   render();
-  await new Promise(resolve => setTimeout(resolve, 350));
   const step = localizedStep(current);
-  explanationResponse = staticExplanation(step);
-  const key = step.key;
-  responses[key] = question;
-  responses[explanationAnswerKey(key)] = explanationResponse;
-  saveAll();
-  answerVisible = true;
-  explanationLoading = false;
-  render();
+  try {
+    const useApi = !['localhost', '127.0.0.1'].includes(window.location.hostname) && !window.location.hostname.endsWith('github.io');
+    if (useApi) {
+      const response = await fetch('/api/explain', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question, participantId: participant.id, mode: step.explanationMode || 'default' }) });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || 'The explanation service returned an error.');
+      explanationResponse = payload.answer || '';
+    } else {
+      await new Promise(resolve => setTimeout(resolve, 350));
+      explanationResponse = staticExplanation(step);
+    }
+    if (!explanationResponse) throw new Error('The explanation service returned an empty answer.');
+    const key = step.key;
+    responses[key] = question;
+    responses[explanationAnswerKey(key)] = explanationResponse;
+    saveAll();
+    answerVisible = true;
+  } catch (error) {
+    explanationError = error.message || 'The explanation service could not answer.';
+  } finally {
+    explanationLoading = false;
+    render();
+  }
 }
 function videoMarkup(step) { const id = step.video.includes('2') ? 'video-2' : 'video-1'; return `<div class="video-frame"><video id="${id}" controls preload="metadata" src="${step.video}"></video><div class="video-empty" id="empty-${id}" style="display:none"><div><div class="play-icon">▶</div><div>${ui().videoPlaceholder}</div><small>${ui().addVideo} <b>${step.video}</b></small></div></div></div>`; }
 function sectionMediaMarkup(step) { const isImage = step.type === 'image' || step.type === 'order'; return `<section class="stage-video section-media">${isImage ? `<div class="study-image"><img src="${step.image}" alt="Study scene"></div>` : videoMarkup(step)}</section>`; }
